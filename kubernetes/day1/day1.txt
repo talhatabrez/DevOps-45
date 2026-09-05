@@ -1,0 +1,33 @@
+Cluster: k8s cluster is a group or collection of nodes or worker machines that are required to run containerized applications. A K8s cluster consists of a master node and multiple worker nodes. The master node is responsible for managing the cluster, while the worker nodes run the containerized applications. It also contains control plane that manages the cluster. 
+
+Pod: It is a standard deployable unit in K8s. It can contain one or more containers. It has its own IP address and containers inside share the same resources. 
+
+Node: It is a machine that runs the pods in K8s. It can be physical or virtual machine. Each node has a Kubelet, kube-proxy and container runtime installed. 
+    Kubelet is used for node and container managment. 
+    Kube-proxy is used for network proxy and load balancing.
+    Container runtime is used to run the containers inside the pods.
+
+Deployment: It is a K8s managment object used to manage the pods and RS. It is also used for providing updates, rollbacks without downtime. 
+
+ReplicaSet: Whenever pod goes down, it does not come up automatically. RS is used to maintain the desire number of pods. It ensures that the specified no.of pods are running at any given time. This can also be thought as scaling up and down of the pods and continuity of services. 
+
+Service: K8s service exposes the pods to external traffic through an endpoint ensuring the common traffic protocols. For public access, K8s ingress is attached when then links to pod/pods. 
+
+
+Something is wrong
+       ↓
+  kubectl get
+       ↓
+  What's happening?
+       ↓
+ kubectl describe
+       ↓
+  Why is it happening?
+       ↓
+   kubectl logs
+       ↓
+  What does the app say?
+       ↓
+    kubectl exec
+       ↓
+  What's happening INSIDE?

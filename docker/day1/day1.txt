@@ -1,0 +1,48 @@
+Images vs Containers:
+- Images are the blueprints of containers. They are portable and light weight. 
+- Images can be reused to create multiple containers.
+- Images are only read-only templates with instructions to create a container.
+- Containers are the running instances of images.
+- Docker image is static, read only blueprint. Whereas Container is live and running instance of that blue print.
+- Docker uses images to create containers and containers to run the applications.
+
+# Images
+docker build -t myapp:1.0 .       # Build an image from a Dockerfile
+docker images                      # List local images
+docker pull nginx:latest           # Pull an image from a registry
+docker rmi myapp:1.0               # Remove an image
+
+# Containers
+docker run -d -p 8080:80 nginx     # Create and start a container in the background
+docker ps                          # List running containers (add -a for all)
+docker stop <container_id>         # Stop a running container
+docker rm <container_id>           # Remove a stopped container
+docker logs <container_id>         # View container logs
+
+Dockerfile:
+- It is a text file that specifies the instructions to build an image. 
+- It consists of few commands which are executed in order to create an image. 
+- By default, we need to name the file as Dockerfile. And without this, we can't create an image.
+- The following is the order of execution of commands in Dockerfile:
+    - FROM: this specifies the base image to be used. 
+    - WORKDIR: this sets the working directory for the following commands.
+    - RUn: executes beforehand commands in the image. 
+    - COPY: cpy files from local machine to image.
+    - ExPOSE: this exposes the port to outside world.
+    - CMD: this specifies the command to run when the container starts.
+
+Layers:
+- Each command in Dockerfile creates a new layer in the image.
+- Layers let you extend images of others by reusing their base layers, allowing you to add only the data that your application needs.
+
+Registry:
+ - Docker regsitry is a place where we can store and share our images.
+ - For public images, we use Docker Hub. For private images, we can use Azure Container Registry or AWS ECR.
+
+lifecycle of a docker container consists of five states:
+
+- Created state
+- Running state
+- Paused state/unpaused state
+- Stopped state
+- Killed/Deleted state

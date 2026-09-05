@@ -1,0 +1,13 @@
+Workflow: It is a file written in YAML that defines the automation process. It is stored in Repository in .github/workflows directory. It contains one or more jobs that are executed or triggered by an event. It is the highest level component in GHA. 
+
+Trigger: The event which triggers the workflow. It can be a push, pull request, schedule, release, etc.
+
+Job: Set of steps that execute in the same runner environment. Each job runs in a fresh instance of the virtual env. Inside a job, the task runs sequentially. Because they share same runner and data is easily transferred. Seperate jobs runs in parallely to save time, they don't share any resources. 
+
+Step: a step is the smallest executable unit within a job. Steps are the actual tasks that perform the work, running sequentially one after the other on the same virtual machine runner
+
+Runner: A server that runs your workflows when they're triggered. Each runner can run one job at a time. GitHub provides hosted runners with different operating systems, or you can host your own runners.
+
+Actions: It is a predefined set of jobs or code that perform repetitive specific tasks. 
+
+Secrets: these allow us to store sensitive information. These are encrypted even before reaching GitHub. Secrets are variables that you use in your workflows. 

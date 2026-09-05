@@ -1,0 +1,15 @@
+Control node: The machine from where we run the ansible commands. (ansible-playbook, ansible, ansible-vault). It can be a physical or virtual machine. It has ansible installed and configured to manage the remote nodes. (Can also call as master node)
+
+Managed node: The node that is managed by the control node. It can be a physical or virtual machine. It has ssh enabled and python installed to run the ansible commands. (can also be called as Slave Node)
+
+Inventory: it has the list of managed nodes and their details. It can be a static or dynamic inventory. Static inventory is a simple text file that contains the list of managed nodes and their details. Dynamic inventory is a script that generates the list of managed nodes and their details.
+
+Playbook: These are nothing but a set of instructions written in YAML format. It contains the list of tasks to be executed on managed nodes. The play contains variables, roles, and an ordered list of tasks to be run continuously on managed nodes. 
+
+Task: It is a single unit of work to be executed on managed nodes. 
+
+Handlers: A special form of a Task, that only executes when notified by a previous task which resulted in a ‘changed’ status.
+
+Module: It is like a library that contains the code to perform a specific task. Ansible has a large number of built-in modules that can be used to perform various tasks on managed nodes. Ansible modules are grouped into collections. 
+
+Idempotency: It is a property of Ansible that ensures that the state of the managed nodes remains consistent even if the same playbook is run multiple times. Ansible achieves idempotency by checking the current state of the managed nodes before executing a task and only making changes if necessary. This means that running the same playbook multiple times will not result in any unintended changes to the managed nodes.
