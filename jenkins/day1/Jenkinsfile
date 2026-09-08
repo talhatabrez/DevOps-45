@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build'){
+            steps {
+                dir('jenkins/day1') {
+                    echo 'Building the application...'
+                    bat 'mkdir -p build'
+                    bat 'javac -d build src\\Calculator.java'
+                }
+            }
+        }
+        
+        stage('Test'){
+            steps {
+                dir('jenkins/day1') {
+                    echo 'Testing the application...'
+                    bat 'javac -cp build -d build test\\CalculatorTest.java'
+                    bat 'java -cp build CalculatorTest'
+                }
+            }
+        }
+        
+        stage('Package'){
+            steps {
+                dir('jenkins/day1') {
+                    echo 'Packaging the application...'
+                    bat 'jar cf Calculator.jar -C build .'
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+Controller: Jenkins Controller is the main component in Jenkins, whcih is like original node in Jenkins Installation. It is responsible for managing the build process, scheduling jobs, and coordinating with agents to execute tasks. It also helps in monitoring the agents. Agents can be connected to controller via local or cloud computers. 
+
+Agent: Agents provide executors that perform work when requested by controllers. they can run pipelines, jobs and tasks. 
+
+Pipeline: It is collection of plugins used to implement and integrate continuous delivery pipelines into Jenkins. Continuous Delivery is a software development practice where code changes are automatically built, tested, and prepared for release to production. Definition of Jenkins Pipeline is written into a text file called Jenkinsfile.
+
+Node: Node is machine, part of Jenkins environment and is capable to executing pipelines.
+
+Stage: It is a conceptual part where it defines everything in a pipeline (build, test, deploy). It is used to organize the pipeline into different sections.
+
+Step: It is a single task that tells Jenkins what to do at a particular point in time. 
+
+Jenkinsfile: It is a text file that contains the definition of a Jenkins Pipeline and is checked into source control. It defines the entire build process, including stages, steps, and other configurations.
+
+Credentials: After adding credentials in Jenkins, they can be used in pipelines to access external systems securely. Jenkins supports various types of credentials, such as username/password, SSH keys, and API tokens.
+
+jenkins admin pwd will be stored at C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword
